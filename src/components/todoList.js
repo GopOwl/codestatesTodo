@@ -1,10 +1,12 @@
 import React from "react";
 import TodoItem from "./todoItem";
+import './todoList.css';
 
-function TodoList({todos}) {
+function TodoList({todos, onCheckToggle}) {
     return (
-        <div>{todos.map(todo => 
-            (<TodoItem todo={todo} key={todo.id}/>))}
+        <div className="TodoList">
+            {todos.map(todo => 
+            (<TodoItem todo={todo} key={todo.id} onCheckToggle={onCheckToggle}/>))}
         </div>
     )
 };
